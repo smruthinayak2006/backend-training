@@ -1,4 +1,17 @@
-print("Simple Calculator")
+def add(a,b):
+    return a + b
+
+def subtract(a,b):
+    return a - b
+
+def multiply(a,b):
+    return a * b
+
+def divide(a,b):
+    if b != 0:
+        return a / b
+    else:
+        return "Error: Cannot divide by zero"
 
 while True:
     num1 = float(input("Enter first number: "))
@@ -13,17 +26,17 @@ while True:
     choice = input("Enter choice (1/2/3/4): ")
 
     if choice == "1":
-        print("Result:", num1 + num2)
+        print("Result:", add(num1, num2))
 
     elif choice == "2":
-        print("Result:", num1 - num2)
+        print("Result:", subtract(num1, num2))
 
     elif choice == "3":
-        print("Result:", num1 * num2)
+        print("Result:", multiply(num1, num2))
 
     elif choice == "4":
         if num2 != 0:
-            print("Result:", num1 / num2)
+            print("Result:", divide(num1, num2))
         else:
             print("Error: Cannot divide by zero")
 
