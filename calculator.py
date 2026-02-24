@@ -1,17 +1,19 @@
-def add(a,b):
+def add(a, b):
     return a + b
 
-def subtract(a,b):
+def subtract(a, b):
     return a - b
 
-def multiply(a,b):
+def multiply(a, b):
     return a * b
 
-def divide(a,b):
+def divide(a, b):
     if b != 0:
         return a / b
     else:
         return "Error: Cannot divide by zero"
+    
+history = []
 
 while True:
     num1 = float(input("Enter first number: "))
@@ -26,19 +28,24 @@ while True:
     choice = input("Enter choice (1/2/3/4): ")
 
     if choice == "1":
-        print("Result:", add(num1, num2))
+        result = add(num1, num2)
+        print("Result:", result)
+        history.append(f"{num1} + {num2} = {result}")
 
     elif choice == "2":
-        print("Result:", subtract(num1, num2))
+        result = subtract(num1, num2)
+        print("Result:", result)
+        history.append(f"{num1} - {num2} = {result}")
 
     elif choice == "3":
-        print("Result:", multiply(num1, num2))
+        result = multiply(num1, num2)
+        print("Result:", result)
+        history.append(f"{num1} * {num2} = {result}")
 
     elif choice == "4":
-        if num2 != 0:
-            print("Result:", divide(num1, num2))
-        else:
-            print("Error: Cannot divide by zero")
+        result = divide(num1, num2)
+        print("Result:", result)
+        history.append(f"{num1} / {num2} = {result}")
 
     else:
         print("Invalid choice")
@@ -46,5 +53,9 @@ while True:
     again = input("Do you want to calculate again? (yes/no): ")
 
     if again.lower() != "yes":
+        print("\nCalculation History:")
+        for item in history:
+            print(item)
+
         print("Goodbye!")
         break
