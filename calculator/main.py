@@ -1,6 +1,5 @@
-from Backend.calculator.operations import add, subtract, multiply, divide
+from operations import add, subtract, multiply, divide
 from utils import get_numbers, get_choice
-
 history = []
 
 while True:
